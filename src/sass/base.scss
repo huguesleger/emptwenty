@@ -1,0 +1,189 @@
+body {
+    font-family: $font_barlow;
+    background-color: #fff;
+    &.cursor-is-active {
+        cursor: none !important;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-hidden body {
+    overflow-y: scroll;
+}
+// logo
+// ==================
+.navbar-brand svg {
+    width: auto;
+    height: 30px;
+}
+
+// bg color
+// ==================
+.bg-blue-dark {
+    background-color: $color_primary;
+}
+.bg-grey-light {
+    background-color: $grey_light;
+}
+.bg-yellow {
+    background-color: $color_secondary;
+}
+.bg-blue-light {
+    background-color: $blue_light;
+}
+
+// color
+// ==================
+.color-yellow {
+    color: $color_secondary;
+}
+.color-blue-dark {
+    color: $color_primary;
+}
+.color-blue-light {
+    color: $blue_light;
+}
+.color-grey-light {
+    color: $grey_light;
+}
+
+// separtion
+// ==================
+.line {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid $grey_light;
+    margin: 2rem 0;
+}
+
+// parallax
+// ==================
+.parallax {
+    position: relative;
+    z-index: 0;
+}
+.parallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    /* support for plugin https://github.com/bfred-it/object-fit-images */
+    font-family: 'object-fit: cover;';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+// scroll to top
+// ==================
+#scroll-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 25px;
+    // cursor: pointer;
+    .btn-to-top {
+        width: 50px;
+        height: 50px;
+        background-color: $color_secondary;
+        border-radius: 50%;
+        color: $txt_dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        &.show {
+            opacity: 1;
+        }
+    }
+}
+
+
+// scroll infinite
+// ==================
+.page-load-status {
+    display: none; 
+    // padding-top: 20px;
+    text-align: center;
+    color: #777;
+  }
+//   .infinite-scroll-request {
+//       padding-top: 2.5rem;
+//   }
+  .loader-dots {
+    position: relative;
+    width: 142px;
+    height: 40px;
+    background: white;
+    margin: 0 auto;
+    display: flex;
+    -webkit-filter: contrast(20);
+    filter: contrast(20);
+    .dot {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 12px;
+        left: 15px;
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        background: $color_primary;
+        border-radius: 50%;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation: dot 2.8s infinite;
+        animation: dot 2.8s infinite;
+    }
+    .dots {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        margin-top: 12px;
+        margin-left: 31px;
+        -webkit-animation: dots 2.8s infinite;
+        animation: dots 2.8s infinite;
+        span {
+            display: block;
+            float: left;
+            width: 16px;
+            height: 16px;
+            margin-left: 16px;
+            -webkit-filter: blur(4px);
+            filter: blur(4px);
+            background: $color_primary;
+            border-radius: 50%;
+        }
+    }
+  }
+
+
+
+// footer
+// ==================
+.footer {
+    padding-top: 5rem;
+    color: #fff;
+    h4 {
+        font-size: 1.4rem;
+    }
+    .footer-link {
+        .footer-nav {
+            .btn-link {
+                color: #fff;
+            }
+        }
+    }
+    .line {
+        border-color: $grey_dark;
+    }
+    .footer-copyright {
+        display: flex;
+        justify-content: space-between;
+        a {
+            font-weight: 500;
+            color: #fff;
+        }
+    }
+}

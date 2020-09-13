@@ -1,0 +1,70 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}">
+	<div class="cursor">
+		<div class="cursor-wrapper">
+			<div class="cursor-circle"></div>
+			<div class="cursor-label"></div>
+			<div class="cursor-icon"></div>
+		</div>
+	</div>
+	{% block preload %}
+	<div class="preload">
+		<div class="preload-bg"></div>
+		<div class="preload-wrap-logo">
+			<div class="preload-bg-logo"></div>
+			<div class="preload-logo">
+				<div class="preload-logo-mask"></div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
+		<header class="header">
+			{% block header %}
+					<nav id="nav-main" class="navbar navbar-expand-md">
+					<div class="container">
+						<a class="navbar-brand" href="{{site.url}}" rel="home"><img src="{{custom_logo_url}}" />
+							<span class="title-site">{{site.name}}</span>
+						</a>
+						<div class="btn-main">
+							<span class="btn-fill"></span>
+						</div>						
+						{% include "menu.twig" with {'items': menu.get_items} %}
+							    {# <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> #}
+{# <form role="search" method="get" id="searchform" class="searchform" action="{{site.link}}">
+  <div>
+    <label class="screen-reader-text" for="s">Search for:</label>
+    <input type="text" value="" name="s" id="s" />
+    <input type="submit" id="searchsubmit" value="Search" />
+  </div>
+</form> #}
+
+{# {% filter shortcodes %}
+[ivory-search id="30" title="Default Search Form"]
+{% endfilter %} #}
+								
+						</div>
+					</nav><!-- #nav -->
+			{% endblock %}
+		</header>
+
+		<div class="app">
+			{% block content %}
+			{% endblock %}
+
+		{% block footer %}
+			<footer class="footer bg-blue-dark">
+				{% include 'footer.twig' with {'items': menu_footer.get_items} %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+			{% block javascripts %}
+			{% endblock %}
+	</body>
+</html>

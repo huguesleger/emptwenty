@@ -1,0 +1,50 @@
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="bold delay-6" data-anim-reveal="slide-up">{{post.meta('last_sound_titre_section')}}</h2>
+                <h3 class="lighter mb-5 delay-7" data-anim-reveal="slide-up">{{post.meta('last_sound_description_section')}}</h3>
+            </div>
+            <div class="col-md-12">
+                {% set number  = 1 + i %}
+                {% for post in Post(sound_posts) %}
+                    <div class="player music-player delay-8" data-anim-reveal="slide-up">
+                        <div class="wrap-cover">
+                            <div class="player-cover">
+                                <div class="player-cover-item" style="background-image: url('{{ post.thumbnail.src }}')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-item">
+                            <div class="item-top">
+                                <div class="item-name titre">
+                                    <h3 class="bold">{{ post.title}}</h3>
+                                    <p>{{ post.artiste}}</p>
+                                </div>
+                            </div>
+                            <audio preload="auto" class="audio fc-media" id="audio-{{number}}">
+                                <source src="{{post.meta('lien_musique')}}">
+                            </audio>
+                        </div>
+                    </div>
+                {% endfor %}   
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <p class="delay-9" data-anim-reveal="slide-up"><a href="{{post.meta('last_sound_lien_bouton')}}" class="btn btn-secondary btn-shadow mt-5">{{post.meta('last_sound_titre_bouton')}}</a></p>
+        </div>
+    </div>
+<div class="wrapper-geometric geometric-last-sound-1 delay-5" data-anim-reveal="fade-in">
+    <div class="circle circle-sm color-yellow"></div>
+</div>
+<div class="wrapper-geometric geometric-last-sound-2 delay-6" data-anim-reveal="fade-in">
+    <div class="circle circle-md color-blue-light"></div>
+</div>
+<div class="wrapper-geometric geometric-last-sound-3 anim-circle-pulse delay-7" data-anim-reveal="fade-in">
+    <div class="circle circle-xs color-yellow"></div>
+</div>
+<div class="wrapper-geometric geometric-last-sound-4 anim-circle-pulse delay-8" data-anim-reveal="fade-in">
+    <div class="circle circle-xs color-blue-dark"></div>
+</div>
+<div class="wrapper-geometric geometric-last-sound-5 delay-9" data-anim-reveal="fade-in">
+    <div class="circle circle-xl color-grey-light"></div>
+</div>

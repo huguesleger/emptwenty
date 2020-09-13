@@ -1,0 +1,21 @@
+<section class="about">
+    {% include 'parts/about.twig'%}
+</section>
+<section class="creative bg-blue-dark text-light">
+    {% include 'parts/creative-process.twig'%}
+</section>
+<section class="services {% if post_services_style.services_moderne == true %}pb-0{% else %}{% endif %}">
+    {% include 'parts/services.twig'%}
+</section>
+<section class="counter py-0">
+    {% include 'parts/counter.twig'%}
+</section>
+<section class="last-sound" data-geometric-sound>
+    {% include 'parts/last-sound.twig'%}
+</section>
+<section class="video py-0">
+    {% include 'parts/video.twig'%}
+</section>
+<section class="genres">
+    {% include 'parts/genres.twig'%}
+</section>

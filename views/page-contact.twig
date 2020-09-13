@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="header-page">
+        <div class="header-content parallax" data-speed="0.7" data-position="{{ post_header.position_image }}" style="background-image: url('{{ post.thumbnail.src }}')">
+            <div class="header-title js-opacity">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 rellax" data-rellax-speed= "4">
+                            <h1>{{post.title}}</h1>
+                            {% if post_header.baseline %}
+                            <span>{{ post_header.baseline }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </div>
+    <section class="contact">   
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="wrap-infos delay-1" data-anim-reveal-page="slide-up" data-cursor-color>
+                        <h2 class="bold title-infos">Commencer un nouveau projet ?</h2>
+                        <div class="info-studio mt-5">
+                            <h3 class="bold">Studio</h3>
+                            <p>FRANCE<br><i class="fas fa-map-marker-alt"></i> Paris</p>
+                        </div>
+                        <div class="info-contact mt-5">
+                            <h3 class="bold">Contactez-nous</h3>
+                            <p><a class="" href="mailto:contact@easymusic.com">contact@easymusic.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="wrap-form delay-1" data-anim-reveal-page="slide-up">
+                        {{post.content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

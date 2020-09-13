@@ -1,0 +1,22 @@
+{% set number  = 1 + i %}
+<div class="col-lg-4 col-md-6 wrap-player{% if posts.pagination.pages|first.current == true %} delay-7{% else %} animate__animated animate__fadeInUp{% endif%}"{% if posts.pagination.pages|first.current == true %}data-anim-reveal="slide-up"{% endif%}>
+	<div class="player music-player">
+		<div class="wrap-cover">
+			<div class="player-cover">
+				<div class="player-cover-item" style="background-image: url('{{ post.thumbnail.src }}')">
+				</div>
+			</div>
+		</div>
+		<div class="player-item">
+			<div class="item-top">
+				<div class="item-name titre">
+					<h3 class="bold">{{ post.title}}</h3>
+					<p>{{ post.artiste}}</p>
+				</div>
+			</div>
+			<audio preload="auto" class="audio fc-media" id="audio-{{number}}">
+				<source src="{{post.meta('lien_musique')}}">
+			</audio>	
+		</div>
+	</div>
+</div>

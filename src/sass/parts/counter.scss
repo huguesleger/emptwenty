@@ -1,0 +1,43 @@
+.counter {
+    overflow: hidden;
+    .counter-wrapper {
+        position: relative;
+        padding: 150px 0;
+        background-size: cover;
+        width: 100%;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(15, 16, 30, 0.7);
+        }
+        .counter-content {
+            min-height: 350px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .item-number {
+        text-align: center;
+        color: #fff;
+        .number-icon {
+            font-size: 2.5rem;
+            color: $color_secondary;
+        }
+        .number-content {
+            .number {
+                font-size: 2rem;
+                font-weight: bold;
+                color: $color_secondary;
+            }
+        }
+    }
+}
+
+@include maxwidth(sm) {
+}

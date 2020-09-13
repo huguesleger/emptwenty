@@ -1,0 +1,40 @@
+@import "~bootstrap/scss/bootstrap";
+
+// Tools
+// ==================
+@import 'tools/variables';
+@import 'tools/mixins';
+@import 'tools/typo';
+@import 'tools/icon';
+@import 'tools/animations';
+
+
+@import 'base';
+
+// Modules
+// ==================
+@import 'modules/cursor';
+@import 'modules/preloader';
+@import 'modules/nav';
+@import 'modules/btn';
+@import 'modules/swiper';
+@import 'modules/header_page';
+@import 'modules/geometric';
+@import 'modules/section';
+@import 'modules/media_element_player';
+@import 'modules/player_sound';
+
+// Pages
+// ==================
+@import 'pages/home';
+@import 'pages/contact';
+
+// Parts
+// ==================
+@import 'parts/hero';
+@import 'parts/about';
+@import 'parts/process';
+@import 'parts/counter';
+@import 'parts/genres';
+@import 'parts/services';
+@import 'parts/video';

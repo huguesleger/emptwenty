@@ -1,0 +1,41 @@
+
+.btn {
+    border-radius: 2rem;
+    padding: 0.6rem 1.2rem;
+}
+.btn-primary {
+    background-color: $color_secondary;
+    border-color: $color_secondary;
+    color: $color_primary;
+    &:hover {
+        background-color: transparent;
+        color: $color_secondary;
+        border-color: $color_secondary;
+    }
+}
+.btn-secondary {
+    background-color: $color_primary;
+    border-color: $color_primary;
+    color: #fff;
+    &:hover {
+        background-color: transparent;
+        color: $color_primary;
+        border-color: $color_primary;
+    }
+}
+.btn-shadow {
+    box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.4);
+}
+.btn-scroll {
+    color: $color_primary;
+    background: $color_secondary;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 40px;
+    border-radius: 50%;
+    &:hover {
+        color: $color_primary;
+    }
+}

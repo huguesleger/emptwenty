@@ -1,0 +1,44 @@
+.video {
+    background-size: cover;
+    max-height: 550px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(15, 16, 30, 0.7);
+    }
+    #video {
+        height: 550px;
+        width: 103%;
+        object-fit: cover;
+    }
+    .video-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@include maxwidth(sm) {
+    .video {
+        background-position: center;
+        #video {
+            width: 100%;
+        }
+    }
+}

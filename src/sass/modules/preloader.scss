@@ -1,0 +1,65 @@
+.preload {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .preload-bg {
+        background-color: $color_secondary;
+        width: 100%;
+        height: 100%;
+        transform-origin: top;
+        transform: scaleY(1);
+    }
+    .preload-wrap-logo {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .preload-bg-logo {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            background-color: $blue_light;
+            transform-origin: top;
+        }
+        .preload-logo{
+            background-image: url('../images/logo-emp.svg');
+            width: 70px;
+            height: 70px;
+            display: flex;
+            position: absolute;
+            background-repeat: no-repeat;
+            justify-content: center;
+            align-items: center;
+            background-size: contain;
+            background-position: center;
+            -webkit-mask-image: url('../images/logo-emp.svg');
+            -webkit-mask-size: contain;
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-image: url('../images/logo-emp.svg');
+            mask-size: contain;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            background-color: #fff;
+            .preload-logo-mask {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $color_secondary;
+                // transform: translateY(100%);
+                transform-origin: bottom;
+                // transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+}

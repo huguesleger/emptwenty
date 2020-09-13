@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            {# <div class="footer-logo">
+                <img class="img-fluid" src="{{post.meta('logo')}}">
+            </div> #}
+            {{footer_logo}}
+        </div>
+        <div class="col-lg-3">
+            {# <div class="footer-studio">
+                <h4 class="mb-4">Studio</h4>
+                <p>{{post.studio}}</p>
+            </div> #}
+            {{footer_studio}}
+        </div>
+        <div class="col-lg-2 offset-lg-1">
+            {# <div class="footer-link">
+                <h4 class="mb-4">Liens</h4>
+                    {% if menu_footer %}
+                        {% for item in items %}
+                        <div class="footer-nav pb-2 {% if loop.first %}pt-0{% endif %}">
+                            <a class="btn-link" href="{{ item.link }}">{{ item.title }}</a>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+            </div> #}
+            <div class="footer-link">
+            {{footer_menu}}
+            {% if menu_footer %}
+                {% for item in items %}
+                <div class="footer-nav pb-2 {% if loop.first %}pt-0{% endif %}">
+                    <a class="btn-link" href="{{ item.link }}">{{ item.title }}</a>
+                </div>
+                {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+        <div class="col-lg-2">
+            {# <div class="footer-contact">
+                <h4 class="mb-4">Une question ?</h4>
+                <a class="btn btn-primary" href="{{post.meta('footer_lien_bouton')}}">{{post.footer_titre_bouton}}</a>
+            </div> #}
+             {{footer_contact}}
+        </div>
+        <div class="line"></div>
+        <div class="col-md-12">
+            <div class="footer-copyright">
+                <p>© Easy Music Project {{"now"|date('Y')}} - All rights reserved</p>
+                <p class="lighter">Development by <a class="btn-link" href="https://www.hl-developerz.com">HL Developerz</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="scroll-to-top">
+    <div class="btn-to-top" data-cursor-label="TOP">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</div>
+</div><!-- end app -->

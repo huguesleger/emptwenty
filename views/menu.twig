@@ -1,0 +1,46 @@
+{% if menu %}
+	{# <ul class="navbar-nav ml-auto">
+	{% for item in items %}
+		<li class="nav-item {% if item.current %}active{% endif %}">
+			<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% if item.children %}
+			{% include "menu.twig" with {'items': item.children} %}
+			{% endif %}
+		</li>	
+	{% endfor %}
+	</ul> #}
+    <ul class="navbar-nav ml-auto">
+        {% for item in items %}
+            <li class="nav-item {% if item.children %}dropdown{% endif %}{% if item.current %}active{% endif %}">
+                <a class="nav-link {% if item.children %}dropdown-toggle{% endif %}" {% if item.children %}data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"{% endif %}href="{{ item.link }}">{{ item.title }}</a>
+                {% if item.get_children %}
+                    <div class="dropdown-menu dropdown-menu-right dropdown-slideIn">
+                        {% for child in item.children %}
+                            <a class="dropdown-item" data-cursor-small href="{{ child.link }}">{{ child.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="navbar-mobile">
+        <div class="wrap-nav">
+            <div class="container">
+                <ul class="nav-list">
+                {% for item in items %}
+                    <li class="nav-item {% if item.children %}dropdown{% endif %}{% if item.current %}active{% endif %}">
+                        <a class="nav-link {% if item.children %}dropdown-toggle{% endif %}" {% if item.children %}data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"{% endif %}href="{{ item.link }}">{{ item.title }}</a>
+                        {% if item.get_children %}
+                            <div class="dropdown-menu dropdown-menu-left dropdown-slideIn">
+                                {% for child in item.children %}
+                                    <a class="dropdown-item" data-cursor-small href="{{ child.link }}">{{ child.title }}</a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>        
+        </div>
+    </div>
+{% endif %}

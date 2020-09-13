@@ -1,0 +1,31 @@
+.about {
+    position: relative;
+    overflow: hidden;
+    .about-name {
+        font-size: 1.2rem;
+    }
+    .img-about {
+        background-size: cover;
+        // background-attachment: fixed;
+        background-position: 50%;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        background-image: url('../images/console-mixage.jpg');
+        &::before {
+            content:'';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(15, 16, 30, 0.5);
+        }
+    }
+    .geometric-about {
+        top: -120px;
+        left: -110px;
+        opacity: 0.4;
+    }
+}

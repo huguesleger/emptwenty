@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+{% block content %}
+    <section class="sound">
+        <div class="container">
+            <div class="row">
+        {% for i,  post in posts %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        {% endfor %} 
+            </div>
+        </div>
+        <div class="page-load-status">
+        <div class="infinite-scroll-request">
+            <div class="loader-dots">
+                <span class="dot"></span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+            <p class="infinite-scroll-error">No more sound to load</p>
+        </div>
+        {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    </section>
+{% endblock %}

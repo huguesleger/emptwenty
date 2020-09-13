@@ -1,0 +1,43 @@
+
+  <div class="swiper-container hero-slider">
+    <div class="swiper-wrapper">
+    {% for post in posts %}
+        <div class="swiper-slide">
+            <div class="swiper-caption">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-7 col-xl-5">
+                            <div class="wrap-caption">
+                                <h2 class="mb-4">{{post.titre}}</span></h2>
+                                <p>{{post.description}}</p>
+                                <a href="{{post.meta('lien_bouton')}}" class="btn btn-primary mt-3">{{post.titre_bouton}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    </div>
+        <div class="swiper-pagination container">
+        </div>
+</div>
+<div class="wrapper-geometric geometric-hero-1">
+    <div class="circle circle-xl color-yellow"></div>
+</div>
+<div class="wrapper-geometric geometric-hero-2">
+    <div class="circle circle-md color-blue-light"></div>
+</div>
+<div class="wrapper-geometric geometric-hero-3 anim-circle-pulse">
+    <div class="circle circle-sm color-yellow"></div>
+</div>
+<div class="wrapper-geometric geometric-hero-4 anim-circle-pulse">
+    <div class="circle circle-xs color-yellow"></div>
+</div>
+<div class="wrapper-geometric geometric-hero-5">
+    <div class="circle circle-sm color-blue-light"></div>
+</div>
+<div class="wrapper-geometric geometric-hero-6">
+    <div class="circle circle-lg color-blue-light"></div>
+</div>                         

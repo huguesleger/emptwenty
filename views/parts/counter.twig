@@ -1,0 +1,25 @@
+<div class="counter-wrapper parallax" data-speed="0.7" style="background-image: url('{{ post.meta('section_counter_background_image') }}')">
+    <div class="counter-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="title-section txt-light delay-6" data-anim-reveal="slide-up">{{ post.meta('section_counter_titre') }}</h2>
+                </div>
+                {% for post_counter in posts_counter %}
+                <div class="col-md-3">
+                    <div class="item-number">
+                        <div class="number-icon icon-emp delay-7" data-anim-reveal="fade-in">
+                            <i class="icon-{{ post_counter.counter_icon }}"></i>
+                        </div>
+                        <div class="number-content">
+                        <h3 class="number delay-8" data-anim-reveal="fade-in" data-number="{{ post_counter.counter_nombre }}">0</h3>
+                        <p class="delay-9" data-anim-reveal="fade-in">{{ post_counter.title }}</p>   
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+    

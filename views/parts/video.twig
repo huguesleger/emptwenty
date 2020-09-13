@@ -1,0 +1,7 @@
+<video autoplay muted loop playsinline id="video">
+  <source src="{{post.meta('video')}}" type="video/mp4">
+</video>
+<div class="video-content">
+    <h2 class="title-section mb-5 delay-6" data-anim-reveal="slide-up">{{post.meta('video_titre')}}</h2>
+    <p class="delay-7" data-anim-reveal="slide-up"><a href="{{post.meta('video_lien_bouton')}}" class="btn btn-primary btn-shadow">{{post.meta('video_titre_bouton')}}</a></p>
+</div>

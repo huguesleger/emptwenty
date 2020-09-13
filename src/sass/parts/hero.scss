@@ -1,0 +1,107 @@
+.hero {
+    position: relative;
+    background-color: $color_primary;
+    color: #fff;
+    overflow: hidden;
+    padding-top: 4rem;
+    max-height: 750px;
+    .swiper-container {
+        display: flex;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        height: auto;
+        width: 100%;
+        z-index: 2;
+        &.hero-slider {
+            min-height: 750px;
+            background-size: cover;
+            background-position: 0% 50%;
+            background-image: url('../images/hero-slide.png');
+            .swiper-pagination {
+                text-align: left;
+                -webkit-transform: translate3d(-50%, 0, 0);
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+        &.swiper-container-horizontal > .swiper-pagination {
+            left: 50%;
+            &.swiper-pagination-bullets {
+                bottom: 100px;
+                .swiper-pagination-bullet {
+                    width: 12px;
+                    height: 12px;
+                    background: #fff;
+                    outline: none;
+                }
+                .swiper-pagination-bullet-active {
+                    background: $color_secondary;
+                }
+            }
+        }
+        .swiper-slide {
+            padding: 10rem 0;
+            .swiper-caption {
+                overflow: hidden;
+                width: 100%;
+                white-space: normal;
+                .wrap-caption {
+                    opacity: 0;
+                    transition: transform 0.3s ease-in-out;
+                    transition-delay: 0.5s;
+                    transform: translate(0, 100%);
+                }
+            }
+            &.swiper-slide-active {
+                .wrap-caption {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                    h2 {
+                        -webkit-animation: fadeInUp 1s both 0.8s;
+                        animation: fadeInUp 1s both 0.8s;
+                        font-weight: 100;
+                        font-size: 3.5rem;
+                        line-height: 1;
+                        span {
+                            font-weight: bold;
+                            color: $color_secondary;
+                        }
+                    }
+                    p {
+                        -webkit-animation: fadeInUp 1s both 1.2s;
+                        animation: fadeInUp 1s both 1.2s;
+                        font-size: 1.2rem;  
+                    }
+                    a {
+                        -webkit-animation: fadeInUp 1s both 1.5s;
+                        animation: fadeInUp 1s both 1.5s;
+                    }
+                }
+            }
+        }
+    }
+    .geometric-hero-1 {
+        top: 30%;
+        left: 60%;
+    }
+    .geometric-hero-2 {
+        top: 75%;
+        left: 35%;
+    }
+    .geometric-hero-3 {
+        top: 63%;
+        left: 43%;
+    }
+    .geometric-hero-4 {
+        top: 22%;
+        left: 90%;
+    }
+    .geometric-hero-5 {
+        top: 28%;
+        left: 2%;
+    }
+    .geometric-hero-6 {
+        top: 42%;
+        right: -5%;
+    }
+}

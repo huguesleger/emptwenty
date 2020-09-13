@@ -1,0 +1,38 @@
+{% extends "index-archive.twig" %}
+
+{% block content %}
+    <div class="header-page">
+        <div class="header-content parallax" data-speed="0.7" data-position="{{ post_header.position_image }}" style="background-image: url('{{ post.thumbnail.src }}')">
+            <div class="header-title js-opacity">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>{{post.title}}</h1>
+                            {% if post_header.header_baseline %}
+                                <span>{{ post_header.header_baseline }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-to-content js-opacity">
+                <a class="btn-scroll" href="#content" class="btn">
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div> 
+    </div>
+{% if post_productions %}
+    <section class="description pb-0" id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3 class="bold delay-1" data-anim-reveal-page="slide-up">{{ post_productions.productions_description|nl2br() }}</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{{ parent() }}
+{% endblock %}

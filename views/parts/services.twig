@@ -1,0 +1,88 @@
+{% if post_services_style.services_moderne == true or post_services_style.services_classique == true  %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="service-device delay-5" data-anim-reveal="img-right bg-white"></div>
+        </div>
+        <div class="col-md-5 offset-md-1">
+            <div class="device-content">
+                <h2 class="title-section bold mb-3 delay-5" data-anim-reveal="slide-up">{{post_services_list.services_titre_section}}</h2>
+                <p class="delay-6" data-anim-reveal="slide-up">{{post_services_list.description}}</p>
+                <ul class="device-list">
+                    <li class="list-item delay-7" data-anim-reveal="slide-up"><i class="fas fa-compact-disc mr-3"></i>{{post_services_list.titre_1}}</li>         
+                    <li class="list-item delay-8" data-anim-reveal="slide-up"><i class="fas fa-compact-disc mr-3"></i>{{post_services_list.titre_2}}</li>
+                    <li class="list-item delay-9" data-anim-reveal="slide-up"><i class="fas fa-compact-disc mr-3"></i>{{post_services_list.titre_3}}</li>
+                    {% if post_services_list.titre_4 == true %}
+                    <li class="list-item delay-10" data-anim-reveal="slide-up"><i class="fas fa-compact-disc mr-3"></i>{{post_services_list.titre_4}}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="item-service-simple">
+                    <h2 class="title-section bold mb-3">{{post_services_list.services_titre_section}}</h2>
+                    <p class="mb-5">{{post_services_list.description}}</p>
+                    <div class="row">
+                    {% for post_services in posts_services %}
+                        <div class="col-lg-11 col-xl-10">
+                            <div class="service-content">
+                                <div class="service-icon icon-emp">
+                                    <i class="icon-{{post_services.icon}}"></i>
+                                </div>
+                                <div class="wrap-content">
+                                    <h4 class="service-type">{{ post_services.title}}</h4>
+                                    <h3 class="service-title mb-4">{{post_services.titre}}</h3>
+                                    <p class="mb-0">{{post_services.description}}</p>
+                                </div>
+                                {% if loop.last %}
+                                {% else %}
+                                <div class="line"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor%}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-end">
+                <div class="service-device w-100"></div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<div class="{% if post_services_style.services_moderne == true %} container-fluid{% else %} container{% endif %}">
+    <div class="row">
+    {% for post_services in posts_services %}
+     {% if post_services_style.services_moderne == true %}
+        <div data-anim-reveal="img-right bg-white" class="p-0 col-lg-4{% if loop.first %} col-md-6 bg-blue-dark delay-6{% elseif loop.index == 2 %} col-md-6 bg-blue-light delay-7{% else %} col-md-12 col-lg-4 bg-yellow delay-8{% endif %}">
+            <div class="item-service"{% if loop.last %}data-cursor-color{% endif %}>
+                <div class="service-content">
+                    <h4 class="service-type delay-5" data-anim-reveal="slide-up">{{ post_services.title}}</h4>
+                    <h3 class="service-title mb-4 delay-6" data-anim-reveal="slide-up">{{post_services.titre}}</h3>
+                    <p class="delay-7" data-anim-reveal="slide-up">{{post_services.description}}</p>
+                </div>
+            </div>
+        </div>
+    {% elseif post_services_style.services_classique == true %}
+        <div class="col-lg-4">
+            <div class="item-service-classique mb-5 mb-lg-0">
+                <div class="service-icon icon-emp">
+                    <i class="icon-{{post_services.icon}}"></i>
+                </div>
+                <div class="service-content">
+                    <h4 class="service-type">{{ post_services.title}}</h4>
+                     <h3 class="service-title mb-4">{{post_services.titre}}</h3>
+                     <p>{{post_services.description}}</p>
+                </div>
+                <div class="item-color"></div>
+            </div>
+        </div>   
+    {% endif %}
+    {% endfor %}
+    </div>
+</div>

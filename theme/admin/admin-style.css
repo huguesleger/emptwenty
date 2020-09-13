@@ -1,0 +1,690 @@
+@font-face {
+    font-family: 'emp';
+    src:  url('../admin/fonts/emp.eot?57n8a0');
+    src:  url('../admin/fonts/emp.eot?57n8a0#iefix') format('embedded-opentype'),
+      url('../admin/fonts/emp.ttf?57n8a0') format('truetype'),
+      url('../admin/fonts/emp.woff?57n8a0') format('woff'),
+      url('../admin/fonts/emp.svg?57n8a0#emp') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  .icon-emp i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'emp' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-accordion:before {
+    content: "\e900";
+  }
+  .icon-acoustic-guitar:before {
+    content: "\e901";
+  }
+  .icon-banjo:before {
+    content: "\e902";
+  }
+  .icon-cassette1:before {
+    content: "\e903";
+  }
+  .icon-cassette-player:before {
+    content: "\e904";
+  }
+  .icon-cd4:before {
+    content: "\e905";
+  }
+  .icon-cello:before {
+    content: "\e906";
+  }
+  .icon-conga:before {
+    content: "\e907";
+  }
+  .icon-cymbal:before {
+    content: "\e908";
+  }
+  .icon-sound-waves:before {
+    content: "\e909";
+  }
+  .icon-levels:before {
+    content: "\e90a";
+  }
+  .icon-sound1:before {
+    content: "\e90b";
+  }
+  .icon-drums:before {
+    content: "\e90c";
+  }
+  .icon-drums1:before {
+    content: "\e90d";
+  }
+  .icon-electric-guitar:before {
+    content: "\e90e";
+  }
+  .icon-flute:before {
+    content: "\e90f";
+  }
+  .icon-forward:before {
+    content: "\e910";
+  }
+  .icon-gong:before {
+    content: "\e911";
+  }
+  .icon-harmonica:before {
+    content: "\e912";
+  }
+  .icon-harp:before {
+    content: "\e913";
+  }
+  .icon-headphones2:before {
+    content: "\e914";
+  }
+  .icon-ipod1:before {
+    content: "\e915";
+  }
+  .icon-maracas:before {
+    content: "\e916";
+  }
+  .icon-metronome:before {
+    content: "\e917";
+  }
+  .icon-microphone8:before {
+    content: "\e918";
+  }
+  .icon-microphone9:before {
+    content: "\e919";
+  }
+  .icon-mp3-file:before {
+    content: "\e91a";
+  }
+  .icon-music-cloud:before {
+    content: "\e91b";
+  }
+  .icon-music-file6:before {
+    content: "\e91c";
+  }
+  .icon-music-sheet:before {
+    content: "\e91d";
+  }
+  .icon-musical-note:before {
+    content: "\e91e";
+  }
+  .icon-musical-note1:before {
+    content: "\e91f";
+  }
+  .icon-mute2:before {
+    content: "\e920";
+  }
+  .icon-pan:before {
+    content: "\e921";
+  }
+  .icon-piano3:before {
+    content: "\e922";
+  }
+  .icon-play:before {
+    content: "\e923";
+  }
+  .icon-radio2:before {
+    content: "\e924";
+  }
+  .icon-record-player:before {
+    content: "\e925";
+  }
+  .icon-repeat:before {
+    content: "\e926";
+  }
+  .icon-rewind:before {
+    content: "\e927";
+  }
+  .icon-saxophone:before {
+    content: "\e928";
+  }
+  .icon-shuffle:before {
+    content: "\e929";
+  }
+  .icon-backward:before {
+    content: "\e92a";
+  }
+  .icon-forward1:before {
+    content: "\e92b";
+  }
+  .icon-key:before {
+    content: "\e92c";
+  }
+  .icon-sound2:before {
+    content: "\e92d";
+  }
+  .icon-speaker1:before {
+    content: "\e92e";
+  }
+  .icon-stop:before {
+    content: "\e92f";
+  }
+  .icon-tambourine:before {
+    content: "\e930";
+  }
+  .icon-triangle:before {
+    content: "\e931";
+  }
+  .icon-trombone:before {
+    content: "\e932";
+  }
+  .icon-trumpet:before {
+    content: "\e933";
+  }
+  .icon-tuba:before {
+    content: "\e934";
+  }
+  .icon-vinyl-record:before {
+    content: "\e935";
+  }
+  .icon-violin:before {
+    content: "\e936";
+  }
+  .icon-volume-down:before {
+    content: "\e937";
+  }
+  .icon-volume-up:before {
+    content: "\e938";
+  }
+  .icon-vynil:before {
+    content: "\e939";
+  }
+  .icon-walkman:before {
+    content: "\e93a";
+  }
+  .icon-xylophone:before {
+    content: "\e93b";
+  }
+  .icon-record:before {
+    content: "\e93c";
+  }
+  .icon-album:before {
+    content: "\e93d";
+  }
+  .icon-music:before {
+    content: "\e93e";
+  }
+  .icon-music1:before {
+    content: "\e93f";
+  }
+  .icon-music-album:before {
+    content: "\e940";
+  }
+  .icon-album1:before {
+    content: "\e941";
+  }
+  .icon-album2:before {
+    content: "\e942";
+  }
+  .icon-microphone:before {
+    content: "\e943";
+  }
+  .icon-music-note:before {
+    content: "\e944";
+  }
+  .icon-music-note1:before {
+    content: "\e945";
+  }
+  .icon-microphone1:before {
+    content: "\e946";
+  }
+  .icon-music2:before {
+    content: "\e947";
+  }
+  .icon-karaoke:before {
+    content: "\e948";
+  }
+  .icon-book:before {
+    content: "\e949";
+  }
+  .icon-book1:before {
+    content: "\e94a";
+  }
+  .icon-microphone2:before {
+    content: "\e94b";
+  }
+  .icon-music3:before {
+    content: "\e94c";
+  }
+  .icon-piano:before {
+    content: "\e94d";
+  }
+  .icon-cd:before {
+    content: "\e94e";
+  }
+  .icon-cd1:before {
+    content: "\e94f";
+  }
+  .icon-cd2:before {
+    content: "\e950";
+  }
+  .icon-cd-player:before {
+    content: "\e951";
+  }
+  .icon-chat:before {
+    content: "\e952";
+  }
+  .icon-music4:before {
+    content: "\e953";
+  }
+  .icon-music5:before {
+    content: "\e954";
+  }
+  .icon-computer:before {
+    content: "\e955";
+  }
+  .icon-controls:before {
+    content: "\e956";
+  }
+  .icon-device:before {
+    content: "\e957";
+  }
+  .icon-disco-ball:before {
+    content: "\e958";
+  }
+  .icon-distribution:before {
+    content: "\e959";
+  }
+  .icon-download:before {
+    content: "\e95a";
+  }
+  .icon-ear-plug:before {
+    content: "\e95b";
+  }
+  .icon-equalizer:before {
+    content: "\e95c";
+  }
+  .icon-music6:before {
+    content: "\e95d";
+  }
+  .icon-music-file:before {
+    content: "\e95e";
+  }
+  .icon-music-file1:before {
+    content: "\e95f";
+  }
+  .icon-music-file2:before {
+    content: "\e960";
+  }
+  .icon-music-file3:before {
+    content: "\e961";
+  }
+  .icon-folder:before {
+    content: "\e962";
+  }
+  .icon-add:before {
+    content: "\e963";
+  }
+  .icon-music7:before {
+    content: "\e964";
+  }
+  .icon-folder1:before {
+    content: "\e965";
+  }
+  .icon-music8:before {
+    content: "\e966";
+  }
+  .icon-headphones:before {
+    content: "\e967";
+  }
+  .icon-headphones1:before {
+    content: "\e968";
+  }
+  .icon-headphone:before {
+    content: "\e969";
+  }
+  .icon-ipad:before {
+    content: "\e96a";
+  }
+  .icon-music9:before {
+    content: "\e96b";
+  }
+  .icon-music-file4:before {
+    content: "\e96c";
+  }
+  .icon-music10:before {
+    content: "\e96d";
+  }
+  .icon-location:before {
+    content: "\e96e";
+  }
+  .icon-music11:before {
+    content: "\e96f";
+  }
+  .icon-microphone3:before {
+    content: "\e970";
+  }
+  .icon-sing:before {
+    content: "\e971";
+  }
+  .icon-microphone4:before {
+    content: "\e972";
+  }
+  .icon-microphone5:before {
+    content: "\e973";
+  }
+  .icon-mike:before {
+    content: "\e974";
+  }
+  .icon-music12:before {
+    content: "\e975";
+  }
+  .icon-transfer:before {
+    content: "\e976";
+  }
+  .icon-transfer1:before {
+    content: "\e977";
+  }
+  .icon-click:before {
+    content: "\e978";
+  }
+  .icon-audiobook:before {
+    content: "\e979";
+  }
+  .icon-cd3:before {
+    content: "\e97a";
+  }
+  .icon-music-disc:before {
+    content: "\e97b";
+  }
+  .icon-music-files:before {
+    content: "\e97c";
+  }
+  .icon-transfer2:before {
+    content: "\e97d";
+  }
+  .icon-folder2:before {
+    content: "\e97e";
+  }
+  .icon-microphone6:before {
+    content: "\e97f";
+  }
+  .icon-microphone7:before {
+    content: "\e980";
+  }
+  .icon-music13:before {
+    content: "\e981";
+  }
+  .icon-music-note2:before {
+    content: "\e982";
+  }
+  .icon-music-note3:before {
+    content: "\e983";
+  }
+  .icon-music14:before {
+    content: "\e984";
+  }
+  .icon-music-note4:before {
+    content: "\e985";
+  }
+  .icon-music-note5:before {
+    content: "\e986";
+  }
+  .icon-music-note6:before {
+    content: "\e987";
+  }
+  .icon-music-player:before {
+    content: "\e988";
+  }
+  .icon-music-player1:before {
+    content: "\e989";
+  }
+  .icon-ipod:before {
+    content: "\e98a";
+  }
+  .icon-profile:before {
+    content: "\e98b";
+  }
+  .icon-music-system:before {
+    content: "\e98c";
+  }
+  .icon-mute:before {
+    content: "\e98d";
+  }
+  .icon-mute1:before {
+    content: "\e98e";
+  }
+  .icon-note:before {
+    content: "\e98f";
+  }
+  .icon-note1:before {
+    content: "\e990";
+  }
+  .icon-music-file5:before {
+    content: "\e991";
+  }
+  .icon-notepad:before {
+    content: "\e992";
+  }
+  .icon-note2:before {
+    content: "\e993";
+  }
+  .icon-music-notes:before {
+    content: "\e994";
+  }
+  .icon-call:before {
+    content: "\e995";
+  }
+  .icon-piano1:before {
+    content: "\e996";
+  }
+  .icon-piano2:before {
+    content: "\e997";
+  }
+  .icon-radio:before {
+    content: "\e998";
+  }
+  .icon-radio1:before {
+    content: "\e999";
+  }
+  .icon-remove:before {
+    content: "\e99a";
+  }
+  .icon-search:before {
+    content: "\e99b";
+  }
+  .icon-search1:before {
+    content: "\e99c";
+  }
+  .icon-music15:before {
+    content: "\e99d";
+  }
+  .icon-music16:before {
+    content: "\e99e";
+  }
+  .icon-music17:before {
+    content: "\e99f";
+  }
+  .icon-sound:before {
+    content: "\e9a0";
+  }
+  .icon-speaker:before {
+    content: "\e9a1";
+  }
+  .icon-spread:before {
+    content: "\e9a2";
+  }
+  .icon-music18:before {
+    content: "\e9a3";
+  }
+  .icon-cassette:before {
+    content: "\e9a4";
+  }
+  .icon-ticket:before {
+    content: "\e9a5";
+  }
+  .icon-tv:before {
+    content: "\e9a6";
+  }
+  .icon-upload:before {
+    content: "\e9a7";
+  }
+  .icon-user:before {
+    content: "\e9a8";
+  }
+  .icon-user1:before {
+    content: "\e9a9";
+  }
+  .icon-user2:before {
+    content: "\e9aa";
+  }
+  .icon-user3:before {
+    content: "\e9ab";
+  }
+  .icon-users:before {
+    content: "\e9ac";
+  }
+  .icon-volume:before {
+    content: "\e9ad";
+  }
+  .icon-web:before {
+    content: "\e9ae";
+  }
+  .icon-jack:before {
+    content: "\e9af";
+  }
+  .icon-music19:before {
+    content: "\e9b0";
+  }
+  .icon-music20:before {
+    content: "\e9b1";
+  }
+  .icon-laptop:before {
+    content: "\e001";
+  }
+  .icon-desktop:before {
+    content: "\e002";
+  }
+  .icon-phone:before {
+    content: "\e004";
+  }
+  .icon-adjustments:before {
+    content: "\e01d";
+  }
+  .icon-envelope:before {
+    content: "\e028";
+  }
+  .icon-gears:before {
+    content: "\e02b";
+  }
+  .icon-lightbulb:before {
+    content: "\e030";
+  }
+  .icon-layers:before {
+    content: "\e031";
+  }
+  .icon-tools-2:before {
+    content: "\e034";
+  }
+  .icon-mic:before {
+    content: "\e03a";
+  }
+  .icon-profile-male:before {
+    content: "\e040";
+  }
+  .icon-map-pin:before {
+    content: "\e047";
+  }
+  .icon-chat1:before {
+    content: "\e049";
+  }
+  .icon-heart:before {
+    content: "\e04a";
+  }
+  .icon-refresh:before {
+    content: "\e05a";
+  }
+  .icon-happy:before {
+    content: "\e05b";
+  }
+  
+  /* style page icon */
+  
+
+  .icon-admin-wrap {
+    margin: 0;
+  }
+  .icon-header {
+    background-color: #fff;
+    margin-left: -20px;
+  }
+  .icon-admin-wrap .page-title {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+  .icon-title {
+    vertical-align: middle;
+    display: inline-block;
+    height: 24px;
+  }
+  .icon-style {
+    background: #fff;
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .title-style {
+      margin-top: 0;
+      width: 100%;
+  }
+  .icon-emp {
+      font-size: 30px;
+      padding: 20px 0;
+      border-bottom: 1px solid #e2e2e2;
+      width: 25%;
+  }
+  /* .icon-emp:last-child{
+      border-bottom: none;
+  } */
+  .wrap-icon {
+    background: #f1f1f1;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .icon-name {
+      margin-left: 10px;
+      font-size: 20px;
+  }
+  .icon-name.selected::selection {
+    color: red;
+    background: yellow;
+  }
+  .copy-code {
+      margin-top: 10px;
+  }
+
+  .wp-core-ui .button-success {
+      background-color: #28a745;
+      border-color: #28a745;
+  }
+  .wp-core-ui .button-success:hover {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+  .wp-core-ui .button-primary.active, .wp-core-ui .button-primary.active:focus, .wp-core-ui .button-primary.active:hover, .wp-core-ui .button-primary:active {
+      outline: none;
+  }
+
+
+  @media screen and (max-width: 782px) {
+    .icon-style {
+        margin-right: 10px;
+    }
+  }
+
+  
