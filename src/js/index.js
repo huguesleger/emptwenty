@@ -141,9 +141,9 @@ function preloader(){
 
 function initial(){
   tl = new TimelineMax();
-  tl.set(overflowClass, {
-    className:"+=overflow-hidden"
-  })
+  // tl.set(overflowClass, {
+  //   className:"+=overflow-hidden"
+  // })
   // $('html').addClass('overflow-hidden');
 
   tl.fromTo(preloaderMask, {
@@ -170,7 +170,10 @@ function initial(){
     },
   }, '>-0.5')
   .from(overflowClass, {
-    className:"-=overflow-hidden"
+    // className:"-=overflow-hidden"
+    onComplete: () => {
+      $(overflowClass).removeClass('overflow-hidden');
+    }
   }, '>-0.8');
 }
 
@@ -560,9 +563,9 @@ function geometricParallax(){
   });
 
   $(geometricSound).mousemove(function(e) {
-    parallaxSound(e, ".geometric-last-sound-1", -30);
-    parallaxSound(e, ".geometric-last-sound-2", -15);
-    parallaxSound(e, ".geometric-last-sound-5", -12);
+    parallaxSound(e, ".geometric-last-sound-1", -40);
+    parallaxSound(e, ".geometric-last-sound-2", -55);
+    parallaxSound(e, ".geometric-last-sound-5", -20);
   });
   
   function parallaxHeader(e, target, movement) {

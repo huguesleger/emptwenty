@@ -123,7 +123,7 @@ class StarterSite extends Timber\Site {
 			);
 			register_sidebar( $args);
 		}
-		footer_contact();
+		footer_contact();	
 	 }
 
 	/** This is where you can register custom post types. */

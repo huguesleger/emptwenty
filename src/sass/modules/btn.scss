@@ -39,3 +39,29 @@
         color: $color_primary;
     }
 }
+.btn-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        transform: scaleX(0);
+        opacity: 0;
+        background-color: #fff;
+        transition: 0.2s ease-in-out;
+        transform-origin: 0 50%;
+        bottom: 0;
+        left: 0;
+    }
+    &:hover {
+        text-decoration: none;
+        &::before {
+            transform: scaleX(1);
+            opacity: 1;
+        }
+    }
+}

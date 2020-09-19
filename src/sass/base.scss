@@ -165,6 +165,14 @@ body {
 .footer {
     padding-top: 5rem;
     color: #fff;
+    .footer-logo {
+        img {
+            width: 200px;
+        }
+        svg {
+            width: 200px;
+        }
+    }
     h4 {
         font-size: 1.4rem;
     }
@@ -172,6 +180,35 @@ body {
         .footer-nav {
             .btn-link {
                 color: #fff;
+            }
+        }
+    }
+    .footer-contact {
+        a {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+            color: #fff;
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                transform: scaleX(0);
+                opacity: 0;
+                background-color: #fff;
+                transition: 0.2s ease-in-out;
+                transform-origin: 0 50%;
+                bottom: 0;
+                left: 0;
+            }
+            &:hover {
+                text-decoration: none;
+                &::before {
+                    transform: scaleX(1);
+                    opacity: 1;
+                }
             }
         }
     }

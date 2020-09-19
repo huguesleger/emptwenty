@@ -29,7 +29,7 @@
             {% if menu_footer %}
                 {% for item in items %}
                 <div class="footer-nav pb-2 {% if loop.first %}pt-0{% endif %}">
-                    <a class="btn-link" href="{{ item.link }}">{{ item.title }}</a>
+                    <a class="btn-link" data-cursor-small href="{{ item.link }}">{{ item.title }}</a>
                 </div>
                 {% endfor %}
             {% endif %}
