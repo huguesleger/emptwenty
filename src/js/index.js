@@ -50,7 +50,8 @@ document.body.addEventListener('mousemove', onMouseMove);
 function onMouseMove(e) {
  TweenMax.to(cursor, .2, {
    x: e.clientX,
-   y: e.clientY
+   y: e.clientY,
+   visibility: 'visible'
 });
 
 }
@@ -250,6 +251,7 @@ function stickyNavBar() {
 var lastScrollTop = 0;
 var delta = 5;
 var header = $('.header');
+var offsetTop = $('.header').offset().top;
 $(window).on('scroll', function(){
   var st = $(window).scrollTop();
 
@@ -269,7 +271,7 @@ $(window).on('scroll', function(){
       return;
     }
 
-    if (st > lastScrollTop ) {
+    if (st > lastScrollTop) {
       header.removeClass('is-pinned').addClass('is-sticky is-unpinned');
     } else {
       header.addClass('is-pinned').removeClass('is-unpinned');
@@ -279,6 +281,11 @@ $(window).on('scroll', function(){
   
 });
 
+  if (offsetTop > 0) {
+    header.addClass('is-unpinned');
+  } else {
+    header.removeClass('is-unpinned');
+  }
 }
 
 /*--------------------------------------------
@@ -560,6 +567,7 @@ function geometricParallax(){
     parallaxHeader(e, ".geometric-hero-1", -25);
     parallaxHeader(e, ".geometric-hero-2", -15);
     parallaxHeader(e, ".geometric-hero-5", -30);
+    parallaxHeader(e, ".geometric-hero-6", -20);
   });
 
   $(geometricSound).mousemove(function(e) {
@@ -652,7 +660,7 @@ function revealElements(){
 /*--------------------------------------------
     load function
 ---------------------------------------------*/
-$(document).ready(function() {
+$(function() {
     customCursor();
     preloader();
     // navBar();
