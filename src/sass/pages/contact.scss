@@ -130,3 +130,9 @@ div.wpforms-container-full.wrap-form-contact .wpforms-form .wpforms-field-descri
     height: auto;
     padding: 0;
 }
+
+@include maxwidth(xs) {
+    .contact .wrap-infos .title-infos {
+        font-size: 2rem;
+    }
+}

@@ -28,3 +28,14 @@
         z-index: -1;
     }
 }
+
+@include maxwidth(md) {
+    .about .img-about {
+        height: 70vh;
+    }
+}
+@include minmaxwidth(md, lg) {
+    .about .img-about {
+        height: 50vh;
+    }
+}

@@ -224,3 +224,29 @@ body {
         }
     }
 }
+
+@include maxwidth(xs) {
+    .footer {
+        padding-top: 4rem;
+    }
+    #scroll-to-top {
+        display: none;
+    }
+}
+@include maxwidth(md) {
+    .footer {
+        .footer-studio {
+            margin-top: 3rem;
+        }
+        .footer-link, .footer-contact {
+            margin-top: 1.25rem;
+        }
+        .footer-contact .textwidget p {
+            margin-bottom: 0;
+        }
+        .footer-copyright {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

@@ -216,3 +216,16 @@
         }
     }
 }
+
+@include maxwidth(xs) {
+    .service-device {
+        min-height: 250px;
+        margin-bottom: 3rem;
+    }
+}
+
+@include minmaxwidth(xs, md) {
+    .service-device {
+        background-position: center;
+    }
+}

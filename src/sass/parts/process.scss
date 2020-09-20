@@ -68,3 +68,28 @@
         padding: 0 2.5rem;
     }
 }
+
+@include maxwidth(xs) {
+    .item-step {
+        .step-line {
+            display: none;
+        }
+        .wrap-dot {
+            margin: 0 auto 2rem;
+        }
+        .step-content {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+@include minmaxwidth(xs, md) {
+    .item-step {
+        .step-content {
+            padding: 0 2rem;
+        }
+        .wrap-dot {
+            margin: 0 auto 2rem;
+        }
+    }
+}

@@ -2,12 +2,12 @@
     <div class="row">   
         <div class="col-md-12 text-center">
         <div class="title-section">
-            <h2 class="bold delay-6" data-anim-reveal="slide-up">{{ post.meta('section_genres_titre') }}</h2>
-            <p class="delay-7" data-anim-reveal="slide-up">{{ post.meta('section_genres_description') }}</p>
+            <h2 class="bold delay-6 mb-3" data-anim-reveal="slide-up">{{ post.meta('section_genres_titre') }}</h2>
+            <h3 class="lighter delay-7" data-anim-reveal="slide-up">{{ post.meta('section_genres_description') }}</p>
         </div>
         </div>
         {% for post_genres in posts_genres %}
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
             <div class="item-genre delay-8" data-anim-reveal="img-right bg-white shadow">
                 <div class="genre-icon icon-emp">
                     <i class="icon-{{ post_genres.genre_icon }}"></i>

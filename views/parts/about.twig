@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row align-items-center">
-        <div class="col-lg-5">
+        <div class="col-md-8 col-lg-5">
             <h1 class="about-name delay-6" data-anim-reveal="slide-up">{{ post.meta('about_titre')}}</h1>
             <h2 class="title-section bold delay-7" data-anim-reveal="slide-up">{{post.meta('about_baseline')}}</h2>
             <p class="delay-8" data-anim-reveal="slide-up">{{post.meta('about_description')}}</p>
-            <p class="delay-9" data-anim-reveal="slide-up"><a href="{{post.meta('lien_bouton')}}" class="btn btn-secondary btn-shadow mt-3">{{post.meta('about_titre_bouton')}}</a></p>
+            <p class="delay-9" data-anim-reveal="slide-up"><a href="{{post.meta('lien_bouton')}}" class="btn btn-secondary btn-shadow mt-3 mb-3 mb-lg-0">{{post.meta('about_titre_bouton')}}</a></p>
         </div>
         <div class="col-lg-6 offset-lg-1">
             <div class="img-about parallax delay-10" data-speed="0.7" data-anim-reveal="img-bottom bg-white" style="background-image: url('{{ post.meta('about_image') }}')"></div>

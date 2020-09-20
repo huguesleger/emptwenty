@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-3 col-xl-4">
             {# <div class="footer-logo">
                 <img class="img-fluid" src="{{post.meta('logo')}}">
             </div> #}
             {{footer_logo}}
         </div>
-        <div class="col-lg-3">
+        <div class="col-md-10 col-lg-3">
             {# <div class="footer-studio">
                 <h4 class="mb-4">Studio</h4>
                 <p>{{post.studio}}</p>
@@ -35,7 +35,7 @@
             {% endif %}
             </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-3 col-xl-2">
             {# <div class="footer-contact">
                 <h4 class="mb-4">Une question ?</h4>
                 <a class="btn btn-primary" href="{{post.meta('footer_lien_bouton')}}">{{post.footer_titre_bouton}}</a>
@@ -45,7 +45,7 @@
         <div class="line"></div>
         <div class="col-md-12">
             <div class="footer-copyright">
-                <p>© Easy Music Project {{"now"|date('Y')}} - All rights reserved</p>
+                <p class="mb-0 mb-md-3">© Easy Music Project {{"now"|date('Y')}} - All rights reserved</p>
                 <p class="lighter">Development by <a class="btn-link" href="https://www.hl-developerz.com">HL Developerz</a></p>
             </div>
         </div>

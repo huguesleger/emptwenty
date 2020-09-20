@@ -40,4 +40,9 @@
 }
 
 @include maxwidth(sm) {
+    .counter {
+        .counter-wrapper {
+            padding: 70px 0;
+        }
+    }
 }
