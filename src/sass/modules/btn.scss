@@ -12,6 +12,17 @@
         color: $color_secondary;
         border-color: $color_secondary;
     }
+    &:focus {
+        background-color: transparent;
+        color: $color_secondary;
+        border-color: $color_secondary;
+        box-shadow: initial;
+    }
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    background-color: transparent;
+    color: $color_secondary;
+    border-color: $color_secondary;
 }
 .btn-secondary {
     background-color: $color_primary;
@@ -22,9 +33,20 @@
         color: $color_primary;
         border-color: $color_primary;
     }
+    &:focus {
+        background-color: transparent;
+        color: $color_primary;
+        border-color: $color_primary;
+        box-shadow: initial;
+    }
+}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+    background-color: transparent;
+    color: $color_primary;
+    border-color: $color_primary;
 }
 .btn-shadow {
-    box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.4) !important;
 }
 .btn-scroll {
     color: $color_primary;

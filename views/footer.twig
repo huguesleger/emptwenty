@@ -45,8 +45,8 @@
         <div class="line"></div>
         <div class="col-md-12">
             <div class="footer-copyright">
-                <p class="mb-0 mb-md-3">© Easy Music Project {{"now"|date('Y')}} - All rights reserved</p>
-                <p class="lighter">Development by <a class="btn-link" href="https://www.hl-developerz.com">HL Developerz</a></p>
+                <p class="mb-0 mb-md-3">© Easy Music Project {{"now"|date('Y')}} - {% if site.language == 'en-GB' %}All rights reserved{% else %} Tous droits réservés{% endif %}</p>
+                <p class="lighter">{% if site.language == 'en-GB' %}Development by{% else %}développement{% endif %} <a class="btn-link" href="https://www.hl-developerz.com">HL Developerz</a></p>
             </div>
         </div>
     </div>
