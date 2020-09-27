@@ -7,19 +7,6 @@
  * @since    Timber 0.1
  */
 
-// $context = Timber::context();
-
-// $soundargs = array(
-//     // Get post type project
-// 	'post_type' => 'sound',
-// 	'order'		=> 'DESC'
-// );
-
-// $context['posts_sound'] = new Timber\PostQuery($soundargs);
-// $timber_post_sound     = Timber::query_post('sound');
-// $context['post_sound'] = $timber_post_sound;
-// Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context, $timber_post_sound );
-
 $templates = array( 'archive-productions.twig', 'index.twig' );
 
 $context = Timber::context();

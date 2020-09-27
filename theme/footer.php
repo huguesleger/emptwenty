@@ -19,6 +19,4 @@ $timberContext['content'] = ob_get_contents();
 ob_end_clean();
 $templates = array( 'page-plugin.twig' );
 
-// $timberContext['first_footer_widget'] = Timber::get_widgets('first_footer_widget_area');
-
 Timber::render( $templates, $timberContext, $context);

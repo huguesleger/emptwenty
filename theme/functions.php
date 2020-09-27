@@ -461,11 +461,11 @@ add_action( 'admin_init', 'emp_twenty_register_settings' );
 
 function emp_twenty_admin_menu( ) {
 	add_menu_page(
-		'Liste des icons', // le titre de la page
-		'Icon',            // le nom de la page dans le menu d'admin
-		'administrator',        // le rôle d'utilisateur requis pour voir cette page
-		'emp-icon-page',        // un identifiant unique de la page
-		'emp_twenty_setting_page'   // le nom d'une fonction qui affichera la page
+		'Liste des icons', 
+		'Icon',           
+		'administrator',      
+		'emp-icon-page',    
+		'emp_twenty_setting_page' 
 	);
 }
 add_action( 'admin_menu', 'emp_twenty_admin_menu' );
@@ -511,17 +511,12 @@ function emp_twenty_enqueue_fontawesome() {
 	add_action( 'wp_enqueue_scripts', 'header_scripts' );
 	
 	function footer_scripts()  {
-	// wp_enqueue_script( 'emptwentytweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js', array('jquery'), '', true );
-	// wp_enqueue_script( 'emptwentytxtplugin', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/TextPlugin.min.js', array('jquery'), '', true);
-	// wp_enqueue_script( 'emptwentytimelinemax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js', array('jquery'), '', true );
-	// wp_enqueue_script( 'emptwentyplayer', 'https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js', '', '', true );
 	wp_enqueue_script( 'emptwentyplugins', get_template_directory_uri() . '/public/js/plugins.js');
 	wp_enqueue_script( 'emptwentyScrollMagic', get_template_directory_uri() . '/public/js/scrollMagic.js');
 	wp_enqueue_script( 'emptwentyscript', get_template_directory_uri() . '/public/js/script.js', array('jquery'), '', true );
 	}
 	add_action( 'wp_footer', 'footer_scripts' );
 
-	// get_stylesheet_directory_uri() instead of get_template_directory_uri()
 	function load_admin_style() {
 		wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/admin/admin-style.css', false, '1.0.0' );
 		wp_enqueue_script( 'admin_js', get_template_directory_uri() . '/admin/admin-script.js', array('jquery'), '1.0.0', true  );

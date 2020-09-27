@@ -1,14 +1,4 @@
 {% if menu %}
-	{# <ul class="navbar-nav ml-auto">
-	{% for item in items %}
-		<li class="nav-item {% if item.current %}active{% endif %}">
-			<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% if item.children %}
-			{% include "menu.twig" with {'items': item.children} %}
-			{% endif %}
-		</li>	
-	{% endfor %}
-	</ul> #}
     <ul class="navbar-nav ml-auto">
         {% for item in items %}
             <li class="nav-item {% if item.children %}dropdown{% endif %}{% if item.current %}active{% endif %}">

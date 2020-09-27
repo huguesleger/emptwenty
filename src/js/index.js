@@ -12,7 +12,6 @@ function customCursor() {
   var cursor = document.querySelector('.cursor');
   var body = document.querySelector('body');
   var label = document.querySelector('.cursor-label');
-  var icon = document.querySelector('.cursor-icon');
   var hoverables = document.querySelectorAll([
     "button",
     "a",
@@ -128,24 +127,16 @@ function onMouseHoverOutColor() {
     preloader
 ---------------------------------------------*/ 
 function preloader(){
-  var preloader = $('.preload');
   var preloaderBg = $('.preload-bg');
   var preloadWrapLogo = $('.preload-wrap-logo');
-  var preloaderLogo = $('.preload-logo');
   var preloaderMask = $('.preload-logo-mask');
   var overflowClass = $('html');
   var elementReveal = $("[data-anim-reveal-page]");
-  // var E = "Power1.easeInOut";
-  // var C = "Power3.easeOut";
 
   var tl;
 
 function initial(){
   tl = new TimelineMax();
-  // tl.set(overflowClass, {
-  //   className:"+=overflow-hidden"
-  // })
-  // $('html').addClass('overflow-hidden');
 
   tl.fromTo(preloaderMask, {
     y: 100,
@@ -166,12 +157,10 @@ function initial(){
     duration: 0.8,
     scaleY: 0,
     onComplete: () => {
-      // $('html').removeClass('overflow-hidden');
       $(elementReveal).addClass('is-reveal');
     },
   }, '>-0.5')
   .from(overflowClass, {
-    // className:"-=overflow-hidden"
     onComplete: () => {
       $(overflowClass).removeClass('overflow-hidden');
     }
@@ -179,65 +168,8 @@ function initial(){
 }
 
 
-// function show(){
-//   tl = gsap.timeline();
-
-//   tl
-//   .set(preloadWrapLogo, {
-//     y: 60,
-//     scale: 0.75,
-//   })
-//   .set(preloaderMask, {
-//     y: 100,
-//   })
-
-//   .to(preloaderBg, {
-//     ease: 'quart.inOut',
-//     duration: 0.6,
-//     scaleY: 1,
-//     onStart: () => {
-//       $('html').addClass('overflow-hidden');
-//     },
-//   })
-//   .to(preloadWrapLogo, {
-//     delay: 0.1,
-//     duration: 0.6,
-//     ease: 'quart.out',
-//     scale: 1,
-//     y: 0,
-//   })
-//   .to(preloaderMask, {
-//     y: 0,
-//     duration: 1,
-//     ease: 'none',
-//   }, '>-0.3')
-// }
-
-// function hide() {
-//   tl = gsap.timeline();
-
-//   tl
-//     .to(preloadWrapLogo, {
-//       delay: 0.15,
-//       duration: 0.5,
-//       ease: 'quart.inOut',
-//       opacity: 0,
-//       scale: 0.75,
-//     })
-//     .to(preloaderBg, {
-//       ease: 'quart.inOut',
-//       duration: 0.6,
-//       scaleY: 0,
-//       onComplete: () => {
-//         $('html').removeClass('overflow-hidden');
-//       },
-//     }, '>-0.5')
-// }
-
 function init() {
   initial();
-  // show();
-  // hide();
 }
   init();
 
@@ -254,15 +186,6 @@ var header = $('.header');
 var offsetTop = $('.header').offset().top;
 $(window).on('scroll', function(){
   var st = $(window).scrollTop();
-
-  // if (st > lastScrollTop) {
-  //   header.addClass('is-unpinned').addClass('is-sticky').removeClass('is-pinned');
-  // } else if (st == 0 ) {
-  //     header.removeClass('is-pinned').removeClass('is-sticky');
-  // } else {
-  //   header.addClass('is-pinned').removeClass('is-unpinned');
-  // }
-  // lastScrollTop = st;
 
   if (st <= 0) {
     header.removeClass('is-pinned is-sticky');
@@ -316,9 +239,6 @@ function navMobile(){
 ---------------------------------------------*/ 
 function heroSlider(){
     var swiper = new Swiper('.swiper-container', {
-        // spaceBetween: 30,
-        // cssMode: true,
-        // centeredSlides: true,
         effect: 'fade',
         autoplay: {
           delay: 6000,
@@ -390,7 +310,6 @@ $(window).on('scroll', function() {
       },
       complete: function() {
         $this.text(this.countNum);
-        //alert('finished');
       }
   
     });  
@@ -478,11 +397,6 @@ function contactForm() {
     parallax
 ---------------------------------------------*/
 function parallax(){
-  // var rellax = new Rellax('.rellax');
-
-// if($('div').hasClass('rellax')) {
-//   var rellax = new Rellax('.rellax');
-// }
 $('.parallax').jarallax();
 }
 
@@ -494,7 +408,6 @@ function scrollToOpacity() {
       var opacity = 1;
       var headerContent = $('.header-page').outerHeight() / 2;
       var classOpacity = $('.js-opacity');
-      // var headerTitle = $('.header-title');
   
       if(headerContent < $(document).scrollTop()){
           opacity = 0;
@@ -510,7 +423,7 @@ function scrollToOpacity() {
 ---------------------------------------------*/
 function toTop() {
   if ($('#scroll-to-top').length) {
-    var scrollTrigger = 900, // px
+    var scrollTrigger = 900,
         backToTop = function () {
             var scrollTop = $(window).scrollTop();
             if (scrollTop > scrollTrigger) {
@@ -563,14 +476,14 @@ function geometricParallax(){
   var geometricHeader = $("[data-geometric-header]");
   var geometricSound = $("[data-geometric-sound]");
 
-  $(geometricHeader).mousemove(function(e) {
+  $(geometricHeader).on('mousemove', function(e) {
     parallaxHeader(e, ".geometric-hero-1", -25);
     parallaxHeader(e, ".geometric-hero-2", -15);
     parallaxHeader(e, ".geometric-hero-5", -30);
     parallaxHeader(e, ".geometric-hero-6", -20);
   });
 
-  $(geometricSound).mousemove(function(e) {
+  $(geometricSound).on('mousemove', function(e) {
     parallaxSound(e, ".geometric-last-sound-1", -40);
     parallaxSound(e, ".geometric-last-sound-2", -55);
     parallaxSound(e, ".geometric-last-sound-5", -20);
@@ -612,16 +525,12 @@ function revealElements(){
     for (let i = 0; i < animationElement.length; i++) {
       const el = animationElement[i];
     
-    // create a scene
     new ScrollMagic.Scene({
         offset: '160px',
         triggerElement: el,
         triggerHook: "onEnter",
         reverse: false,
-      })
-      // .setPin(".about-name") // pins the element for the the scene's duration
-      // .addTo(controller); // assign the scene to the controller
-    
+      })  
       .on('enter', function (event) {
         el.classList.add('is-reveal');
       })
@@ -635,16 +544,12 @@ function revealElements(){
     for (let i = 0; i < animationElementPage.length; i++) {
       const el = animationElementPage[i];
     
-    // create a scene
     new ScrollMagic.Scene({
         offset: '260px',
         triggerElement: el,
         triggerHook: 0,
         reverse: false,
-      })
-      // .setPin(".about-name") // pins the element for the the scene's duration
-      // .addTo(controller); // assign the scene to the controller
-    
+      })   
       .on('enter', function (event) {
         el.classList.add('is-reveal');
       })
@@ -663,7 +568,6 @@ function revealElements(){
 $(function() {
     customCursor();
     preloader();
-    // navBar();
     navMobile();
     stickyNavBar();
     heroSlider();
@@ -677,12 +581,7 @@ $(function() {
     toTop();
     infiniteScroll();
     geometricParallax();
-    revealElements();
-    
+    revealElements();   
 });
-
-$(window).on('load', function(){
-});
-
 
 });
