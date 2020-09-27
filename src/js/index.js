@@ -1,5 +1,5 @@
 import 'bootstrap';
-import Swiper from '../js/plugins';
+import Swiper from '../js/vendors';
 import ScrollMagic from '../js/scrollMagic';
 require('../sass/main.scss');
 

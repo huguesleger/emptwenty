@@ -446,17 +446,14 @@ class StarterSite extends Timber\Site {
 	
 
 }
-// à l'initialisation de l'administration
-// on informe WordPress des options de notre thème
 
+/**
+ * add page icon admin.
+ */
 function emp_twenty_register_settings( ) {
-	register_setting( 'emp_twenty', 'icon' ); // couleur de fond
+	register_setting( 'emp_twenty', 'icon' );
 }
 add_action( 'admin_init', 'emp_twenty_register_settings' );
-
-
-// la fonction myThemeAdminMenu( ) sera exécutée
-// quand WordPress mettra en place le menu d'admin
 
 
 function emp_twenty_admin_menu( ) {
@@ -486,6 +483,78 @@ function wpdocs_remove_menus() {
   add_action( 'admin_menu', 'wpdocs_remove_menus' ); 
 
 
+/** 
+ *  Remove class body
+*/
+add_filter( 'body_class', 'adjust_body_class' );
+function adjust_body_class( $classes ) {
+	foreach ( $classes as $key => $value ) {
+		if ( $value == 'page-template-default') unset( $classes[ $key ] );
+		if ( $value == 'page') unset( $classes[ $key ] );
+		if ( $value == 'wp-custom-logo') unset( $classes[ $key ] );
+		if( 0 === strpos( $value, 'page-id-' )) unset($classes[$key]);
+		if( 0 === strpos( $value, 'page-template-' )) unset($classes[$key]);
+		if ( $value == 'page-template') unset( $classes[ $key ] );
+		if( 0 === strpos( $value, 'postid-' )) unset($classes[$key]);
+		if ( $value == 'single') unset( $classes[ $key ] );
+	}
+	return $classes;
+}
+
+/** remove version style css/js */
+function emp_twenty_remove_wp_version_strings($src) {
+
+	global $wp_version;
+	parse_str(parse_url($src, PHP_URL_QUERY), $query);
+	  if(!empty($query['ver']) && $query['ver'] === $wp_version) {
+		$src = remove_query_arg('ver',$src);
+	  }
+	  return $src;
+   }
+  add_filter('script_loader_src','emp_twenty_remove_wp_version_strings');
+  add_filter('style_loader_src','emp_twenty_remove_wp_version_strings');
+
+
+/** remove link head */	
+	remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+	remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+	remove_action( 'wp_head', 'rsd_link' ); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+	remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
+	remove_action( 'wp_head', 'index_rel_link' ); // index link
+	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // prev link
+	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // start link
+	remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Display relational links for the posts adjacent to the current post./ Display the links to the extra feeds such as category feeds
+	remove_action( 'wp_head', 'rest_output_link_wp_head', 10 ); //display link API
+	remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
+
+/** remove emoji */
+function disable_emoji_feature() {
+
+	// Prevent Emoji from loading on the front-end
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+	// Remove from admin area also
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+	// Remove from RSS feeds also
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji');
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji');
+
+	// Remove from Embeds
+	remove_filter( 'embed_head', 'print_emoji_detection_script' );
+
+	// Remove from emails
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+	// Disable from TinyMCE editor. Currently disabled in block editor by default
+	add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+
+	add_filter( 'option_use_smilies', '__return_false' );
+
+}	
+
   /** install last jquery version */
 function jquery() {
 	if (!is_admin()) {
@@ -511,7 +580,7 @@ function emp_twenty_enqueue_fontawesome() {
 	add_action( 'wp_enqueue_scripts', 'header_scripts' );
 	
 	function footer_scripts()  {
-	wp_enqueue_script( 'emptwentyplugins', get_template_directory_uri() . '/public/js/plugins.js');
+	wp_enqueue_script( 'emptwentyplugins', get_template_directory_uri() . '/public/js/vendors.js');
 	wp_enqueue_script( 'emptwentyScrollMagic', get_template_directory_uri() . '/public/js/scrollMagic.js');
 	wp_enqueue_script( 'emptwentyscript', get_template_directory_uri() . '/public/js/script.js', array('jquery'), '', true );
 	}
