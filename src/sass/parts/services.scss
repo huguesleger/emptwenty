@@ -138,6 +138,7 @@
     transform: translateY(0);
     overflow: hidden;
     position: relative;
+    height: 100%;
     .service-icon {
         font-size: 2.5rem;
     }
@@ -220,6 +221,12 @@
     .service-device {
         min-height: 250px;
         margin-bottom: 3rem;
+    }
+}
+
+@include maxwidth(md) {
+    .item-service-classique {
+        height: auto;
     }
 }
 

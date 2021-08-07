@@ -1,6 +1,6 @@
 import 'bootstrap';
-import Swiper from '../js/vendors';
-import ScrollMagic from '../js/scrollMagic';
+import Swiper from './vendors';
+import ScrollMagic from './scrollMagic';
 require('../sass/main.scss');
 
 jQuery(function($) {
@@ -58,9 +58,9 @@ function onMouseMove(e) {
 // Hover an element
 function onMouseHover(e) {
   TweenMax.to(cursor, {
-    onStart: () => {
+    onStart: (function () {
       cursor.classList.add('is-active');
-    }
+    })
   });
   body.classList.add('cursor-is-active');
 
@@ -73,9 +73,9 @@ function onMouseHover(e) {
 
 function onMouseHoverOut(e) {
   TweenMax.to(cursor, {
-    onStart: () => {
-      cursor.classList.remove('is-active');
-    }
+    onStart: (function () {
+      cursor.classList.remove("is-active");
+    })
   });
   body.classList.remove('cursor-is-active');
 
@@ -87,9 +87,9 @@ function onMouseHoverOut(e) {
 
 function onMouseHoverSmall() {
   TweenMax.to(cursor, {
-    onStart: () => {
+    onStart: (function () {
       cursor.classList.add('is-small');
-    }
+    })
   });
   body.classList.add('cursor-is-active');
 
@@ -97,26 +97,26 @@ function onMouseHoverSmall() {
 
 function onMouseHoverOutSmall() {
   TweenMax.to(cursor, {
-    onStart: () => {
+    onStart: (function () {
       cursor.classList.remove('is-small');
-    }
+    })
   });
 }
 
 function onMouseHoverColor() {
   TweenMax.to(cursor, {
-    onStart: () => {
+    onStart: (function () {
       cursor.classList.add('is-color');
-    }
+    })
   });
 
 }
 
 function onMouseHoverOutColor() {
   TweenMax.to(cursor, {
-    onStart: () => {
+    onStart: (function () {
       cursor.classList.remove('is-color');
-    }
+    })
   });
 
 }
@@ -156,14 +156,14 @@ function initial(){
     ease: 'quart.inOut',
     duration: 0.8,
     scaleY: 0,
-    onComplete: () => {
+    onComplete: (function () {
       $(elementReveal).addClass('is-reveal');
-    },
+    }),
   }, '>-0.5')
   .from(overflowClass, {
-    onComplete: () => {
+    onComplete: (function () {
       $(overflowClass).removeClass('overflow-hidden');
-    }
+    }),
   }, '>-0.8');
 }
 
@@ -280,45 +280,45 @@ function HeaderScrollTo() {
 /*--------------------------------------------
     counter
 ---------------------------------------------*/
-function counter(){
+// function counter(){
 
-  var event = false;
-  if($('.counter').length){
-  var sectionPositionTop = $('.counter').offset().top;
-  }
+//   var event = false;
+//   if($('.counter').length){
+//   var sectionPositionTop = $('.counter').offset().top;
+//   }
 
-$(window).on('scroll', function() {
+// $(window).on('scroll', function() {
 
- var currentPosition = $(document).scrollTop();
- if (currentPosition > sectionPositionTop && event === false) {
-   event = true;
+//  var currentPosition = $(document).scrollTop();
+//  if (currentPosition > sectionPositionTop && event === false) {
+//    event = true;
 
-   $('.number').each(function() {
-    var $this = $(this),
-        countTo = $this.attr('data-number');
+//    $('.number').each(function() {
+//     var $this = $(this),
+//         countTo = $this.attr('data-number');
     
-    $({ countNum: $this.text()}).animate({
-      countNum: countTo
-    },
+//     $({ countNum: $this.text()}).animate({
+//       countNum: countTo
+//     },
   
-    {
+//     {
   
-      duration: 8000,
-      easing:'linear',
-      step: function() {
-        $this.text(Math.floor(this.countNum));
-      },
-      complete: function() {
-        $this.text(this.countNum);
-      }
+//       duration: 8000,
+//       easing:'linear',
+//       step: function() {
+//         $this.text(Math.floor(this.countNum));
+//       },
+//       complete: function() {
+//         $this.text(this.countNum);
+//       }
   
-    });  
-  });
- }
+//     });  
+//   });
+//  }
 
-});
+// });
 
-}
+// }
 
 /*--------------------------------------------
     player audio
@@ -522,38 +522,42 @@ function revealElements(){
   function revealElement() {
     var animationElement = document.querySelectorAll('[data-anim-reveal]');
   
-    for (let i = 0; i < animationElement.length; i++) {
-      const el = animationElement[i];
+    var loop = function loop(i) {
+      var el = animationElement[i];
     
-    new ScrollMagic.Scene({
+      new ScrollMagic.Scene({
         offset: '160px',
         triggerElement: el,
         triggerHook: "onEnter",
-        reverse: false,
-      })  
-      .on('enter', function (event) {
+        reverse: false
+      }).on('enter', function (event) {
         el.classList.add('is-reveal');
-      })
-      .addTo(controller);
+      }).addTo(controller);
+    };
+    
+    for (var i = 0; i < animationElement.length; i++) {
+      loop(i);
     }
   }
 
   function revealElementPage() {
     var animationElementPage = document.querySelectorAll('[data-anim-reveal-page]');
   
-    for (let i = 0; i < animationElementPage.length; i++) {
-      const el = animationElementPage[i];
+    var loop = function loop(i) {
+      var el = animationElementPage[i];
     
-    new ScrollMagic.Scene({
+      new ScrollMagic.Scene({
         offset: '260px',
         triggerElement: el,
         triggerHook: 0,
-        reverse: false,
-      })   
-      .on('enter', function (event) {
+        reverse: false
+      }).on('enter', function (event) {
         el.classList.add('is-reveal');
-      })
-      .addTo(controller);
+      }).addTo(controller);
+    };
+    
+    for (var i = 0; i < animationElementPage.length; i++) {
+      loop(i);
     }
   }
 
@@ -573,7 +577,7 @@ $(function() {
     heroSlider();
     headerImgPositionY();
     HeaderScrollTo();
-    counter();
+    // counter();
     player();
     contactForm();
     parallax();

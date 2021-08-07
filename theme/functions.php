@@ -575,14 +575,14 @@ function emp_twenty_enqueue_fontawesome() {
 	
 	/* Enqueue Styles and Scripts */
 	function header_scripts()  { 
-	  wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/public/css/custom.css');
+	  wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/public/css/custom.min.css');
 	}
 	add_action( 'wp_enqueue_scripts', 'header_scripts' );
 	
 	function footer_scripts()  {
-	wp_enqueue_script( 'emptwentyplugins', get_template_directory_uri() . '/public/js/vendors.js');
-	wp_enqueue_script( 'emptwentyScrollMagic', get_template_directory_uri() . '/public/js/scrollMagic.js');
-	wp_enqueue_script( 'emptwentyscript', get_template_directory_uri() . '/public/js/script.js', array('jquery'), '', true );
+	wp_enqueue_script( 'emptwentyplugins', get_template_directory_uri() . '/public/js/vendors.min.js');
+	wp_enqueue_script( 'emptwentyScrollMagic', get_template_directory_uri() . '/public/js/scrollMagic.min.js');
+	wp_enqueue_script( 'emptwentyscript', get_template_directory_uri() . '/public/js/script.min.js', array('jquery'), '', true );
 	}
 	add_action( 'wp_footer', 'footer_scripts' );
 

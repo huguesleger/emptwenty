@@ -43,7 +43,6 @@ $context['posts_services'] = new Timber\PostQuery($serviceargs);
 $context['posts_services_style'] = new Timber\Post();
 $context['posts_services_list'] = new Timber\Post();
 $context['posts_about'] = new Timber\Post();
-$context['posts_counter'] = new Timber\PostQuery($counterargs);
 $context['posts_genres'] = new Timber\PostQuery($genresargs);
 
 $timber_post     = Timber::query_post();

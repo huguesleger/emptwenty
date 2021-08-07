@@ -1,5 +1,8 @@
 .counter {
     overflow: hidden;
+    .title-section {
+        margin-bottom: 0 !important;
+    }
     .counter-wrapper {
         position: relative;
         padding: 150px 0;

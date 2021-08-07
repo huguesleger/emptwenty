@@ -9,10 +9,13 @@
 
 $context = Timber::context();
 
+$templates = array( 'page-contact.twig', 'index.twig' );
+
 $timber_post     = new Timber\Post();
 $context['post'] = $timber_post;
 $context['posts_header'] = new Timber\Post();
 $timber_post_header     = Timber::query_post('header');
 $context['post_header'] = $timber_post_header;
 
-Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context, $timber_post_header );
+// Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context, $timber_post_header );
+Timber::render( $templates, $context, $timber_post_header, $timber_post);

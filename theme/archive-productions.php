@@ -37,6 +37,7 @@ $podargs = array(
     // Get post type project
 	'post_type' => 'sound',
 	// 'posts_per_page'  => 3,
+	'lang' => 'fr',
 	'order'		=> 'DESC',
 	'paged' => $paged
 );
