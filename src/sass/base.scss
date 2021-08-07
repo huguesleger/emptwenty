@@ -49,6 +49,9 @@ body {
 .color-grey-light {
     color: $grey_light;
 }
+.color-grey-ultralight {
+    color: $grey_ultalight;
+}
 
 // separtion
 // ==================
@@ -68,7 +71,6 @@ body {
 .parallax > .jarallax-img {
     position: absolute;
     object-fit: cover;
-    /* support for plugin https://github.com/bfred-it/object-fit-images */
     font-family: 'object-fit: cover;';
     top: 0;
     left: 0;
@@ -83,7 +85,6 @@ body {
     position: fixed;
     right: 15px;
     bottom: 25px;
-    // cursor: pointer;
     .btn-to-top {
         width: 50px;
         height: 50px;
@@ -106,13 +107,9 @@ body {
 // ==================
 .page-load-status {
     display: none; 
-    // padding-top: 20px;
     text-align: center;
     color: #777;
   }
-//   .infinite-scroll-request {
-//       padding-top: 2.5rem;
-//   }
   .loader-dots {
     position: relative;
     width: 142px;
@@ -165,6 +162,14 @@ body {
 .footer {
     padding-top: 5rem;
     color: #fff;
+    .footer-logo {
+        img {
+            width: 200px;
+        }
+        svg {
+            width: 200px;
+        }
+    }
     h4 {
         font-size: 1.4rem;
     }
@@ -172,6 +177,35 @@ body {
         .footer-nav {
             .btn-link {
                 color: #fff;
+            }
+        }
+    }
+    .footer-contact {
+        a {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+            color: #fff;
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                transform: scaleX(0);
+                opacity: 0;
+                background-color: #fff;
+                transition: 0.2s ease-in-out;
+                transform-origin: 0 50%;
+                bottom: 0;
+                left: 0;
+            }
+            &:hover {
+                text-decoration: none;
+                &::before {
+                    transform: scaleX(1);
+                    opacity: 1;
+                }
             }
         }
     }
@@ -184,6 +218,32 @@ body {
         a {
             font-weight: 500;
             color: #fff;
+        }
+    }
+}
+
+@include maxwidth(xs) {
+    .footer {
+        padding-top: 4rem;
+    }
+    #scroll-to-top {
+        display: none;
+    }
+}
+@include maxwidth(md) {
+    .footer {
+        .footer-studio {
+            margin-top: 3rem;
+        }
+        .footer-link, .footer-contact {
+            margin-top: 1.25rem;
+        }
+        .footer-contact .textwidget p {
+            margin-bottom: 0;
+        }
+        .footer-copyright {
+            flex-direction: column;
+            align-items: center;
         }
     }
 }

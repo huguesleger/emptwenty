@@ -28,7 +28,6 @@ section {
     .geometric-last-sound-5 {
         top: 20%;
         right: -170px;
-        opacity: 0.4;
         z-index: -1;
     }
 }
@@ -40,5 +39,40 @@ section {
     overflow: hidden;
     .player {
         margin-bottom: 2.5rem;
+    }
+}
+
+@include maxwidth(xs) {
+    section {
+        padding: 4rem 0;
+    }
+    .last-sound {
+        .wrapper-geometric[class*="geometric-last-sound-"] {
+            display: none;
+        }
+    }
+    .sound {
+        padding-bottom: 4rem;
+        .wrap-player:last-child{
+            .player {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include minmaxwidth(xs, md) {
+    .last-sound {
+        .wrapper-geometric {
+            &.geometric-last-sound-2 {
+                left: 5%;
+            }
+            &.geometric-last-sound-3 {
+                left: 15%;
+            }
+            &.geometric-last-sound-4 {
+                right: 15%;
+            }
+        }
     }
 }

@@ -1,52 +1,31 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-4">
-            {# <div class="footer-logo">
-                <img class="img-fluid" src="{{post.meta('logo')}}">
-            </div> #}
+        <div class="col-lg-3 col-xl-4">
             {{footer_logo}}
         </div>
-        <div class="col-lg-3">
-            {# <div class="footer-studio">
-                <h4 class="mb-4">Studio</h4>
-                <p>{{post.studio}}</p>
-            </div> #}
+        <div class="col-md-10 col-lg-3">
             {{footer_studio}}
         </div>
         <div class="col-lg-2 offset-lg-1">
-            {# <div class="footer-link">
-                <h4 class="mb-4">Liens</h4>
-                    {% if menu_footer %}
-                        {% for item in items %}
-                        <div class="footer-nav pb-2 {% if loop.first %}pt-0{% endif %}">
-                            <a class="btn-link" href="{{ item.link }}">{{ item.title }}</a>
-                        </div>
-                        {% endfor %}
-                    {% endif %}
-            </div> #}
             <div class="footer-link">
             {{footer_menu}}
             {% if menu_footer %}
                 {% for item in items %}
                 <div class="footer-nav pb-2 {% if loop.first %}pt-0{% endif %}">
-                    <a class="btn-link" href="{{ item.link }}">{{ item.title }}</a>
+                    <a class="btn-link" data-cursor-small href="{{ item.link }}">{{ item.title }}</a>
                 </div>
                 {% endfor %}
             {% endif %}
             </div>
         </div>
-        <div class="col-lg-2">
-            {# <div class="footer-contact">
-                <h4 class="mb-4">Une question ?</h4>
-                <a class="btn btn-primary" href="{{post.meta('footer_lien_bouton')}}">{{post.footer_titre_bouton}}</a>
-            </div> #}
+        <div class="col-lg-3 col-xl-2">
              {{footer_contact}}
         </div>
         <div class="line"></div>
         <div class="col-md-12">
             <div class="footer-copyright">
-                <p>© Easy Music Project {{"now"|date('Y')}} - All rights reserved</p>
-                <p class="lighter">Development by <a class="btn-link" href="https://www.hl-developerz.com">HL Developerz</a></p>
+                <p class="mb-0 mb-md-3">© Easy Music Project {{"now"|date('Y')}} - {% if site.language == 'en-GB' %}All rights reserved{% else %} Tous droits réservés{% endif %}</p>
+                <p class="lighter">{% if site.language == 'en-GB' %}Development by{% else %}développement{% endif %} <a class="btn-link" href="https://www.hl-developerz.com">HL Developerz</a></p>
             </div>
         </div>
     </div>

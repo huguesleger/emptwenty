@@ -1,10 +1,10 @@
 {% if post_services_style.services_moderne == true or post_services_style.services_classique == true  %}
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <div class="service-device delay-5" data-anim-reveal="img-right bg-white"></div>
         </div>
-        <div class="col-md-5 offset-md-1">
+        <div class="col-md-8 col-lg-5 offset-lg-1">
             <div class="device-content">
                 <h2 class="title-section bold mb-3 delay-5" data-anim-reveal="slide-up">{{post_services_list.services_titre_section}}</h2>
                 <p class="delay-6" data-anim-reveal="slide-up">{{post_services_list.description}}</p>
@@ -23,14 +23,14 @@
 {% else %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 order-2 order-lg-1">
                 <div class="item-service-simple">
-                    <h2 class="title-section bold mb-3">{{post_services_list.services_titre_section}}</h2>
-                    <p class="mb-5">{{post_services_list.description}}</p>
+                    <h2 class="title-section bold mb-3 delay-5" data-anim-reveal="slide-up">{{post_services_list.services_titre_section}}</h2>
+                    <p class="mb-5 delay-6" data-anim-reveal="slide-up">{{post_services_list.description}}</p>
                     <div class="row">
                     {% for post_services in posts_services %}
                         <div class="col-lg-11 col-xl-10">
-                            <div class="service-content">
+                            <div class="service-content delay-6" data-anim-reveal="slide-up">
                                 <div class="service-icon icon-emp">
                                     <i class="icon-{{post_services.icon}}"></i>
                                 </div>
@@ -49,8 +49,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 d-flex align-items-end">
-                <div class="service-device w-100"></div>
+            <div class="col-lg-6 d-flex align-items-end order-1 order-lg-2">
+                <div class="service-device w-100 delay-5" data-anim-reveal="img-right bg-white"></div>
             </div>
         </div>
     </div>
@@ -59,7 +59,7 @@
     <div class="row">
     {% for post_services in posts_services %}
      {% if post_services_style.services_moderne == true %}
-        <div data-anim-reveal="img-right bg-white" class="p-0 col-lg-4{% if loop.first %} col-md-6 bg-blue-dark delay-6{% elseif loop.index == 2 %} col-md-6 bg-blue-light delay-7{% else %} col-md-12 col-lg-4 bg-yellow delay-8{% endif %}">
+        <div data-anim-reveal="img-right bg-white" class="p-0 col-lg-4 mb-5 mb-md-0{% if loop.first %} col-md-6 bg-blue-dark delay-6{% elseif loop.index == 2 %} col-md-6 bg-blue-light delay-7{% else %} col-md-12 col-lg-4 bg-yellow delay-8{% endif %}">
             <div class="item-service"{% if loop.last %}data-cursor-color{% endif %}>
                 <div class="service-content">
                     <h4 class="service-type delay-5" data-anim-reveal="slide-up">{{ post_services.title}}</h4>
@@ -69,8 +69,8 @@
             </div>
         </div>
     {% elseif post_services_style.services_classique == true %}
-        <div class="col-lg-4">
-            <div class="item-service-classique mb-5 mb-lg-0">
+        <div class="{% if loop.last %}col-lg-4{% else %} col-md-6 col-lg-4{% endif %}">
+            <div class="item-service-classique delay-8{% if loop.last %} mb-0{% else %} mb-5 mb-lg-0{% endif %}" data-anim-reveal="img-right bg-white">
                 <div class="service-icon icon-emp">
                     <i class="icon-{{post_services.icon}}"></i>
                 </div>

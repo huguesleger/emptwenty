@@ -35,20 +35,7 @@
 						<div class="btn-main">
 							<span class="btn-fill"></span>
 						</div>						
-						{% include "menu.twig" with {'items': menu.get_items} %}
-							    {# <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> #}
-{# <form role="search" method="get" id="searchform" class="searchform" action="{{site.link}}">
-  <div>
-    <label class="screen-reader-text" for="s">Search for:</label>
-    <input type="text" value="" name="s" id="s" />
-    <input type="submit" id="searchsubmit" value="Search" />
-  </div>
-</form> #}
-
-{# {% filter shortcodes %}
-[ivory-search id="30" title="Default Search Form"]
-{% endfilter %} #}
-								
+						{% include "menu.twig" with {'items': menu.get_items} %}								
 						</div>
 					</nav><!-- #nav -->
 			{% endblock %}
@@ -64,7 +51,7 @@
 			</footer>
 			{{ function('wp_footer') }}
 		{% endblock %}
-			{% block javascripts %}
-			{% endblock %}
+		{% block javascripts %}
+		{% endblock %}
 	</body>
 </html>

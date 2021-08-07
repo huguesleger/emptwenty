@@ -39,3 +39,9 @@
         bottom: 40px;
     }
 }
+
+@include maxwidth(xs) {
+    .header-page .header-content {
+        padding: 50px 0;
+    }
+}

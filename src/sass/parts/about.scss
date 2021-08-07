@@ -6,13 +6,11 @@
     }
     .img-about {
         background-size: cover;
-        // background-attachment: fixed;
         background-position: 50%;
         width: 100%;
         height: 100vh;
         overflow: hidden;
         position: relative;
-        background-image: url('../images/console-mixage.jpg');
         &::before {
             content:'';
             position: absolute;
@@ -26,6 +24,17 @@
     .geometric-about {
         top: -120px;
         left: -110px;
-        opacity: 0.4;
+        z-index: -1;
+    }
+}
+
+@include maxwidth(md) {
+    .about .img-about {
+        height: 70vh;
+    }
+}
+@include minmaxwidth(md, lg) {
+    .about .img-about {
+        height: 50vh;
     }
 }

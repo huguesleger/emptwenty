@@ -1,0 +1,110 @@
+.page-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    .wrap-error {
+        position: absolute;
+        font-size: 50vw;
+        line-height: 1;
+        font-weight: bold;
+        width: 100%;
+        padding: 0 15px;
+        text-align: center;
+        color: $grey_light;
+    }
+    .error-content {
+        h2 {
+            line-height: 1;
+        }
+        .error-oops {
+            display: block;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: $color_secondary;
+        }
+        .error-txt {
+            font-size: 1.5rem;
+            font-weight: 200;
+        }
+    }
+    .geometric-last-error-1 {
+        top: 30%;
+        right: 10%;
+    }
+    .geometric-last-error-2 {
+        bottom: 12%;
+        left: 30%;
+    }
+    .geometric-last-error-3 {
+        top: 18%;
+        left: 18%;
+    }
+    .geometric-last-error-4 {
+        top: 62%;
+        right: 18%;
+    }
+}
+
+// error navbar
+// ==================
+.error404 {
+    .header {
+        .navbar {
+            .navbar-brand {
+                color: $grey_body;
+            }
+            #logo {
+                fill: $grey_body;
+            }
+        }
+        &.is-sticky-mobile {
+            .navbar {
+                .navbar-brand {
+                    color: #fff;
+                }
+                #logo {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+    .navbar-nav .nav-item .nav-link {
+        color: $grey_body;
+    }
+    .dropdown:hover > .dropdown-menu.dropdown-slideIn {
+        box-shadow: 0 5px 18px -5px rgba(0, 0, 0, 0.2);
+    }
+    .btn-main .btn-fill {
+        background-color: $grey_body;
+        &::before, &::after {
+            background-color: $grey_body;
+        }
+    }
+    .btn-main.is-open .btn-fill {
+        background-color: #fff;
+        &::before, &::after {
+            background-color: #fff;
+        }
+    }
+}
+
+@include maxwidth(sm) {
+    .page-404 .geometric-last-error-2 {
+        bottom: 2%;
+        left: 60%;
+    }
+    .error404 .dropdown:hover > .dropdown-menu.dropdown-slideIn {
+        box-shadow: none;
+    }
+    .page-404 .wrap-error {
+        position: absolute;
+        font-size: 70vw;
+        left: -34%;
+        top: 20%;
+        -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+    }
+}
